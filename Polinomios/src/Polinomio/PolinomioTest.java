@@ -9,9 +9,7 @@ import org.junit.Test;
 
 public class PolinomioTest {
 	
-	/* PRUEBAS SACA DEL TP QUE ME PASARON */
-	
-	String ruta = "C:\\Users\\DamianPerez\\eclipse-workspace\\Polinomios\\Archivos\\PolinomioGrado5.in";
+	String ruta = "Archivos/PolinomioGrado50.in";
 	double r = 10.755519999999999;;
 	double x = 0.2;
 	
