@@ -9,10 +9,9 @@ import org.junit.Test;
 
 public class PolinomioTest {
 	
-	String ruta = "Archivos/PolinomioGrado50.in";
-	double r = 10.755519999999999;;
+	String ruta = "Archivos/PolinomioGrado10000.in";
+	double r = 2.5;
 	double x = 0.2;
-	
 	
 	@Test
 	public void pruebaEvaluarMSucesivas() throws FileNotFoundException{
@@ -25,9 +24,7 @@ public class PolinomioTest {
 		Calendar tFin = new GregorianCalendar();
 		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
 		System.out.println("pruebaEvaluarMSucesivas: " + diff);
-		
 	}
-	
 	
 	@Test
 	public void pruebaEvaluarRecursiva() throws FileNotFoundException{
@@ -114,8 +111,7 @@ public class PolinomioTest {
 	
 	
 	
-	
-	/*PRUEBAS NUESTRAS*/
+	/* Pruebas básicas para probar resultados correctos
 	
 	@Test
 	public void MSucesivas() {
@@ -405,4 +401,5 @@ public class PolinomioTest {
 		Polinomio polinomio = new Polinomio(grado,coeficientes);
 		Assert.assertEquals(5, (int) polinomio.evaluarHorner(3));
 	}
+	*/
 }
