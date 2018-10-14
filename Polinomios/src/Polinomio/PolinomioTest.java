@@ -3,13 +3,12 @@ package Polinomio;
 import java.io.FileNotFoundException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 import org.junit.Assert;
 import org.junit.Test;
 
 public class PolinomioTest {
 	
-	String ruta = "Archivos/PolinomioGrado10000.in";
+	String ruta = "Archivos/PolinomioGrado80000.in";
 	double r = 2.5;
 	double x = 0.2;
 	
@@ -104,12 +103,7 @@ public class PolinomioTest {
 		long diff = tFin.getTimeInMillis() - tIni.getTimeInMillis();
 		System.out.println("pruebaEvaluarHorner: " + diff);
 	}
-	
-	
-	
 
-	
-	
 	
 	/* Pruebas básicas para probar resultados correctos
 	
