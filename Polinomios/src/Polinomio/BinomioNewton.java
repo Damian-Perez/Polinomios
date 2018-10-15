@@ -10,19 +10,36 @@ public class BinomioNewton {
 		this.n = n;
 	}
 	
-	public int coeficienteK(int k) {
-		return (int) (UtilitariosMath.combinatoria(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
+	public int terminoK(int k) {
+		return (int) (UtilitariosMath.combinatorio(n, k) * Math.pow(a, k) * Math.pow(b, n - k));
 	}
-
-	public Polinomio obtenerCoeficientes() {
-		
+	
+	//Complejidad: O(n²)
+	public double[] obtenerCoeficientesEstatica() {
 		double[] coeficientes = new double[n + 1];
-		
 		for (int i = 0; i < coeficientes.length; i++) {
-			coeficientes[i] = coeficienteK(i);
+			coeficientes[i] = terminoK(i);
 		}
-		
-		return new Polinomio(coeficientes.length - 1, coeficientes);
+		return coeficientes;
+	}
+	
+	//Complejidad: O(n*2^n)
+	public double[] obtenerCoeficientesRecursiva() {
+		double v[] = new double[n+1];
+		double k;
+		for(int i = 0; i < v.length; i++)
+			v[i] = UtilitariosMath.combinatorioRecursivo(n, k = n-i) * Math.pow(a, k) * Math.pow(b, n-k);
+		System.out.println(v);
+		return v;
+	}
+	
+	//Complejidad: O(n²)
+	public double [] obtenerCoeficientesDinamica()
+	{
+		double[] v = UtilitariosMath.trianguloTartaglia(n);
+		for(int i = 0; i < v.length; i++)
+			v[i] *= (Math.pow(a, n--) * Math.pow(b, i));
+		return v;
 	}
 	
 	
